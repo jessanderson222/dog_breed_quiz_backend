@@ -18,6 +18,7 @@ dogdata = data["message"]
 dogdata.each do |key, value|
    dog = Dog.new
    dog.breed = [key, value]
+#    dog.img_url = `https://dog.ceo/api/breed/`key`/images`
    dog.save
 end 
 
