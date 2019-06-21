@@ -9,6 +9,7 @@ require 'rest-client'
 require 'json'
 
 Dog.destroy_all
+Owner.destroy_all
 
 dogapi_url = 'https://dog.ceo/api/breeds/list/all'
 response = RestClient.get(dogapi_url)
@@ -21,5 +22,7 @@ dogdata.each do |key, value|
 #    dog.img_url = `https://dog.ceo/api/breed/`key`/images`
    dog.save
 end 
+
+Owner.create(name:'Oliver', profile_picture:'https://st.depositphotos.com/1779253/5140/v/950/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg')
 
 puts "done!"
